@@ -13,9 +13,11 @@
         android:orientation="vertical">
         <ImageView
             android:id="@+id/moviesRGMLogo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/paddingSplash"
+            android:padding="@dimen/paddingSplash"
+            android:background="@color/White"
             android:contentDescription="@string/imagenSplashCD"
             android:src="@drawable/logo_ceiba1"
             android:scaleType="fitCenter"

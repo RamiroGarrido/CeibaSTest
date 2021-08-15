@@ -4,10 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/drawable/custom_gradient.xml" value="0.1962962962962963" />
-        <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/activity_father.xml" value="0.18" />
+        <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/activity_father.xml" value="0.15" />
         <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/activity_main.xml" value="0.14990942028985507" />
         <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/activity_post.xml" value="0.25" />
-        <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/activity_splash.xml" value="0.12689969604863222" />
+        <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/empty_view.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/fragment_main.xml" value="0.12689969604863222" />
         <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/fragment_post.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Ramiro/AndroidStudioProjects/CeibaSTest/app/src/main/res/layout/post_list_item.xml" value="0.134375" />

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_graph"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
     app:startDestination="@id/nav_main">
     <fragment
         android:id="@+id/nav_main"
-        android:name="co.com.ceiba.mobile.pruebadeingreso.main.MainFragment"
+        android:name="co.com.ceiba.mobile.pruebadeingreso.modules.main.MainFragment"
         android:label="@string/tituloToolBar"
         tools:layout="@layout/fragment_main">
         <action
@@ -14,11 +14,19 @@
             app:destination="@id/nav_post"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
-            app:popUpTo="@id/nav_main" />
+            app:popUpTo="@id/nav_main">
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/nav_post"
-        android:name="co.com.ceiba.mobile.pruebadeingreso.post.PostFragment"
+        android:name="co.com.ceiba.mobile.pruebadeingreso.modules.post.PostFragment"
         android:label="@string/tituloToolBar"
-        tools:layout="@layout/fragment_post"/>
+        tools:layout="@layout/fragment_post" >
+        <argument
+            android:name="userSelected"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="repository.remote_data_source.api_test.UserDTO" />
+    </fragment>
 </navigation>

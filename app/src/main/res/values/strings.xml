@@ -8,10 +8,15 @@
     <string name="generic_error">Ha ocurrido un error inesperado</string>
     <string name="accept">Aceptar</string>
     <string name="list_is_empty">List is empty</string>
+    <!--ERRORS-->
+    <string name="errorUnauthorized">Operación remota no autorizada</string>
+    <string name="errorNotFound">Recurso remoto no encontrado</string>
+    <string name="errorInternet">Verifique que tenga internet</string>
     <!--SPLASH-->
     <string name="autorRGM">Test Ramiro Garrido M.</string>
     <string name="imagenSplashCD">Logo Ceiba Software</string>
     <!--MAIN ACTIVITY-->
     <string name="tituloToolBar">Prueba de Ingreso</string>
+    <string name="noDataOrInternet">No hay datos, ni internet</string>
     <!--POST ACTIVITY-->
 </resources>

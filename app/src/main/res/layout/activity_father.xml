@@ -3,10 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="fatherViewModel"
+            type="co.com.ceiba.mobile.pruebadeingreso.father.FatherViewModel" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/TransparentWhite"
+            android:translationZ="@dimen/zTranslationFather"
+            android:visibility="@{fatherViewModel.vProgressBar}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/progressBarHeight"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/progressBarFather"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:background="@color/White"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/DarkGreen" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:background="@color/White"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="@string/generic_message_progress"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/progressBarText" />
+            </LinearLayout>
+        </RelativeLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
@@ -16,5 +61,12 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/navigation_graph" />
 
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/list_is_empty"
+            android:visibility="@{fatherViewModel.sinDatosOInternet ? view.VISIBLE : view.GONE}" />
     </RelativeLayout>
 </layout>
