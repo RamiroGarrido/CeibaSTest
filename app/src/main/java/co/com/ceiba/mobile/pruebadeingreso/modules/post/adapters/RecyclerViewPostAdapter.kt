@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import co.com.ceiba.mobile.pruebadeingreso.R
 import repository.remote_data_source.api_test.PostDTO
@@ -20,7 +19,7 @@ class RecyclerViewPostAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        var itemView: View =
+        val itemView: View =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.post_list_item, parent, false)
         return ViewHolder(itemView)

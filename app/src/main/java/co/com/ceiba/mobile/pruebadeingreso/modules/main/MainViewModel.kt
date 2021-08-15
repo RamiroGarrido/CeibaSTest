@@ -2,7 +2,6 @@ package co.com.ceiba.mobile.pruebadeingreso.modules.main
 
 import android.os.Parcelable
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import co.com.ceiba.mobile.pruebadeingreso.modules.FatherViewModel
@@ -33,11 +32,11 @@ class MainViewModel(
 
     //Fetch the user list from the Rest API
     suspend fun getUserListAPI(): Boolean {
-        var job = viewModelScope.async {
+        val job = viewModelScope.async {
             try {
-                var response = remoteService.getUserList()
+                val response = remoteService.getUserList()
                 if (response.isSuccessful) {
-                    var result = response.body()
+                    val result = response.body()
                     userList.value = result
                     insertUserListDB(result)
                     return@async true
@@ -56,12 +55,12 @@ class MainViewModel(
 
     //Fetch the user list from the Local DB
     suspend fun getUserListDB(): Boolean {
-        var job = viewModelScope.async(Dispatchers.IO) {
+        val job = viewModelScope.async(Dispatchers.IO) {
             try {
                 val result = dbService.userDAO().getAllUsers()
                 if (result != null) {
                     if (result.isNotEmpty()) {
-                        var obtainedResult: MutableList<UserDTO>? = mutableListOf()
+                        val obtainedResult: MutableList<UserDTO>? = mutableListOf()
                         for (entity in result) {
                             obtainedResult!!.add(
                                 UserDTO(
@@ -92,7 +91,7 @@ class MainViewModel(
             try {
                 if (result != null) {
                     if (result.isNotEmpty()) {
-                        var obtainedResult: MutableList<UserEntity>? = mutableListOf()
+                        val obtainedResult: MutableList<UserEntity>? = mutableListOf()
                         for (dto in result) {
                             obtainedResult!!.add(
                                 UserEntity(

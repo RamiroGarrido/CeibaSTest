@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 class PostFragment : FatherFragment() {
 
     private lateinit var binding: FragmentPostBinding
-    val args: PostFragmentArgs by navArgs()
+    private val args: PostFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,8 +46,6 @@ class PostFragment : FatherFragment() {
                     )
                 ).get(PostViewModel::class.java)
             (viewModel as PostViewModel).userObtained = args.userSelected
-            //(viewModel as PostViewModel).userObtained =
-              //  requireArguments().getParcelable((activity as FatherActivity).constants.KEY_USER)
             binding.root
         } catch (e: Exception) {
             Log.i((activity as FatherActivity).constants.TAG_ERROR, e.message!!)

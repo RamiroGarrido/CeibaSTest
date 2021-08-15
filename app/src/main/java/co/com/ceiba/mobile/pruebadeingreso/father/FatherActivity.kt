@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import co.com.ceiba.mobile.pruebadeingreso.R
 import co.com.ceiba.mobile.pruebadeingreso.databinding.ActivityFatherBinding
 import repository.remote_data_source.ConnectionService
@@ -19,9 +18,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.room.Room
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 import repository.local_data_source.room.LocalDB
 import repository.remote_data_source.api_test.EndpointsTestAPI
 import utilities.Constants
@@ -106,7 +102,7 @@ class FatherActivity : AppCompatActivity() {
                     else -> false
                 }
             }
-            //Legacy versions
+            //Legacy versions. Even though deprecated, do not delete!
             else {
                 connectivityManager.run {
                     connectivityManager.activeNetworkInfo?.run {

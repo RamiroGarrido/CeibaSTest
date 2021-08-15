@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.core.widget.doOnTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -126,7 +125,7 @@ class MainFragment : FatherFragment(), View.OnClickListener {
     //Triggered when a key is pressed on the keyboard
     private fun onKeyPressed(text: CharSequence?, count: Int) {
         try {
-            var userList: List<UserDTO>
+            val userList: List<UserDTO>
             if (count == 0) {
                 (viewModel as MainViewModel).filteredUserList.value = null
                 userList = (viewModel as MainViewModel).userList.value ?: emptyList<UserDTO>()
@@ -161,22 +160,15 @@ class MainFragment : FatherFragment(), View.OnClickListener {
                 //CLICK ON RECYCLERVIEW ITEM TO OPEN A USER POST
                 R.id.btn_view_post -> {
                     var user: UserDTO? = null
-                    if ((viewModel as MainViewModel).filteredUserList.value == null) {
-                        user = (viewModel as MainViewModel).userList.value!![v.tag as Int]
+                    user = if ((viewModel as MainViewModel).filteredUserList.value == null) {
+                        (viewModel as MainViewModel).userList.value!![v.tag as Int]
                     } else {
-                        user = (viewModel as MainViewModel).filteredUserList.value!![v.tag as Int]
+                        (viewModel as MainViewModel).filteredUserList.value!![v.tag as Int]
                     }
-                    val bundle = bundleOf(
-                        (activity as FatherActivity).constants.KEY_USER to user
-                    )
-                    var action = MainFragmentDirections.actionNavMainToNavPost()
+                    val action = MainFragmentDirections.actionNavMainToNavPost()
                     action.userSelected = user
                     (viewModel as MainViewModel).recyclerViewState =
                         binding.recyclerViewSearchResults.layoutManager!!.onSaveInstanceState()
-                    //(activity as FatherActivity).navController.navigate(
-                    //    R.id.action_nav_main_to_nav_post,
-                    //    bundle
-                    //)
                     (activity as FatherActivity).navController.navigate(action)
 
                 }

@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import co.com.ceiba.mobile.pruebadeingreso.R
 import co.com.ceiba.mobile.pruebadeingreso.father.FatherActivity
-import co.com.ceiba.mobile.pruebadeingreso.modules.main.adapters.RecyclerViewMainAdapter
 import kotlinx.coroutines.Job
 
 open class FatherFragment:Fragment() {
